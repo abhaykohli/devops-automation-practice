@@ -27,6 +27,14 @@ pipeline {
                
             }
         }
+    }stage("Deploying to EKS"){
+        steps{
+            script{
+                 withCredentials([awsEksCreds(credentialsId: "AWSCRED", region: "ap-south-1", clusterName: "${DevopsProject}")]) {
+                 sh "aws eks update-kubeconfig --name ${DevopsProject} --region ap-south-1"
+            }
+            }
+        }
     }
 }
     }
