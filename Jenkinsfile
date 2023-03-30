@@ -27,6 +27,7 @@ pipeline {
                
             }
         }
+        }
     }stage("Deploying to EKS"){
         steps{
             script{
