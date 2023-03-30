@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: devops-practice
+
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: devops-practice
+  
+  template:
+    metadata:
+      labels:
+        app: devops-practice
+    spec:
+      containers:
+      - name: devops-practice
+        image: abhaykohli/devops_practice:latest
+        ports:
+        - containerPort: 80
