@@ -35,7 +35,7 @@ pipeline {
         stage("Deploying to EKS"){
             steps{
                 script{
-                     withCredentials([awsEksCreds(credentialsId: "AWSCRED", region: "ap-south-1", clusterName: "${CLUSTER_NAME}")]) {
+                     withAWS([awsEksCreds(credentialsId: "AWSCRED", region: "ap-south-1", clusterName: "${CLUSTER_NAME}")]) {
                      sh "aws eks update-kubeconfig --name ${CLUSTER_NAME} --region ap-south-1"
                      sh "kubectl apply -f Deployment.yml"
                      sh "kubectl apply -f Service.yml"
