@@ -18,4 +18,4 @@ spec:
       - name: devops-practice
         image: abhaykohli/devops_practice:latest
         ports:
-        - containerPort: 80
+        - containerPort: 8080
