@@ -6,7 +6,7 @@ pipeline {
     environment {
         IMAGE_NAME = "abhaykohli/devops_practice"
         IMAGE_TAG = "latest"
-        CLUSTER_NAME = "DevopsProject"
+        CLUSTER_NAME = "MyCluster"
     }
     stages {
         stage('Build maven') {
