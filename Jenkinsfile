@@ -18,7 +18,7 @@ pipeline {
         stage('Build Docker image') {
             steps {
                 script {
-                    sh 'docker build -t abhaykohli/devops_practice -t practice .'
+                    sh 'docker build -t abhaykohli/devops_practice .'
                 }
             }
         }
