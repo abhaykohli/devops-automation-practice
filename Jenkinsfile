@@ -3,11 +3,7 @@ pipeline {
     tools {
         maven '_3_5_0'
     }
-    environment {
-        IMAGE_NAME = "abhaykohli/devops_practice"
-        IMAGE_TAG = "latest"
-        CLUSTER_NAME = "Devops"
-    }
+    
     stages {
         stage('Build maven') {
             steps {
@@ -35,12 +31,7 @@ pipeline {
         stage("Deploying to EKS"){
             steps{
                 script{
-                     withAWS(region: 'ap-northeast-3', credentials: 'AWSCRED') {
-                        sh "aws eks update-kubeconfig --name ${CLUSTER_NAME} --region ap-northeast-3"
-                        sh "export KUBECONFIG=$HOME/.kube/config"
-                        sh "kubectl apply -f Deployment.yml"
-                        sh "kubectl apply -f Service.yml"
-                }   
+                    
                 }
             }
         }
