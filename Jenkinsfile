@@ -34,7 +34,7 @@ pipeline {
                     // Deploy the Docker image to Minikube using the Kubernetes plugin
                     kubernetesDeploy(
                         kubeconfig: credentials('Minikube'),
-                        configs: ['path/to/deployment.yml', 'path/to/service.yml'],
+                        configs: ['Deployment.yml', 'Service.yml'],
                         enableConfigSubstitution: true,
                         values: [
                             IMAGE_NAME: 'abhaykohli/devops_practice:latest'
