@@ -32,7 +32,7 @@ pipeline {
             steps{
                 script{
                     // Deploy the Docker image to Minikube using the Kubernetes plugin
-                    kubeconfig(credentialsId: 'Minikube'){
+                    kubeconfig(credentialsId: 'MINIKUBE'){
                      sh "kubectl apply -f Deployment.yml"
                      sh "kubectl apply -f Service.yml"
                 }
